@@ -1,0 +1,321 @@
+/* Import Font Montserrat agar persis */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* --- VARIABLES & TOKENS --- */
+:root {
+  --color-bg-warm: #F9F7F2;
+  --color-bg-card: #ffffff;
+  --color-text-main: #1A1A1A;
+  --color-text-soft: #666666;
+  --color-accent: #fc4f00;
+  --color-border: #EBE9E4;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Lato', sans-serif;
+  --shadow-standard: 0 15px 35px rgba(0, 0, 0, 0.07);
+  --shadow-orange: 0 25px 50px rgba(252, 79, 0, 0.2);
+}
+/* --- RESET & GLOBAL --- */
+* { 
+    box-sizing: border-box; 
+    margin: 0; padding: 0; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg-warm);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 40px; 
+}
+h1, h2, h3 { 
+    font-family: var(--font-serif); 
+    font-weight: 700; 
+}
+
+/* --- HEADER SYSTEM --- */
+.main-header {
+    padding: 25px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+/* Variant khusus untuk halaman Event (Latar Gelap) */
+.header-solid {
+    position: relative;
+    background-color: #ffffff;
+    border-bottom: 1px solid #333;
+}
+
+.header-content { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo span {
+    font-size: 1.4rem; 
+    letter-spacing: 4px; 
+    text-transform: uppercase;
+    font-weight: 700; color: #000000;
+}
+
+.main-nav a {
+    color: #000000; 
+    text-decoration: none; 
+    margin-left: 35px;
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    opacity: 0.8; 
+    transition: 0.3s;
+}
+.main-nav a:hover, .main-nav a.active { 
+    opacity: 1; 
+    color: var(--color-accent); 
+}
+
+.btn-contact {
+    padding: 10px 22px; 
+    border: 1px solid #000000; 
+    color: #000000 !important;
+    text-decoration: none; 
+    font-size: 0.75rem; 
+    letter-spacing: 1px; transition: 0.3s;
+}
+.btn-contact:hover { 
+    background: #ffffff; 
+    color: #111 !important; 
+}
+
+/* --- STYLE UNTUK JUDUL BARU --- */
+.brand-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem; /* Ukuran besar dan elegan */
+    color: #1a1a1a;
+    margin-bottom: 40px; /* Jarak ke foto di bawahnya */
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Garis dekoratif halus di bawah judul (opsional) */
+.brand-section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #fc4f00; /* Warna aksen oranye */
+    margin: 15px auto 0;
+}
+
+/* Memastikan container deskripsi memiliki padding atas yang cukup */
+.description-section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* --- UPDATE DESCRIPTION SECTION --- */
+.description-section {
+    text-align: center;
+    background-color: #e8e2d6;
+    /* Menambah padding atas agar header tidak menempel, dan padding bawah untuk jarak ke grid */
+    padding: 100px 20px 80px; 
+}
+
+/* --- UPDATE BRAND LOGO/PHOTO SECTION --- */
+.brand-logo-small {
+    display: flex; /* Menyusun foto secara horizontal */
+    justify-content: center; /* Memastikan grup foto berada di tengah */
+    gap: 30px; /* Jarak antar foto (sesuaikan nilainya jika ingin lebih lebar) */
+    margin-bottom: 60px; /* Jarak antara foto dengan teks deskripsi di bawahnya */
+}
+
+.brand-logo-small > div {
+    flex: 1; /* Membuat tiap pembungkus foto memiliki lebar yang sama */
+    max-width: 450px; /* Membatasi lebar maksimal agar tidak terlalu memenuhi layar */
+}
+
+.brand-logo-small img {
+    width: 100%; /* Foto memenuhi lebar container div */
+    height: 500px; /* Menentukan tinggi tetap agar seragam jika foto asli beda ukuran */
+    object-fit: cover; /* Memastikan foto terpotong rapi tanpa distorsi */
+    border-radius: 8px; /* Memberikan sudut halus */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); /* Memberikan kedalaman visual */
+    transition: transform 0.3s ease;
+}
+
+/* Efek interaktif saat kursor di atas foto */
+.brand-logo-small img:hover {
+    transform: scale(1.02);
+}
+
+/* Responsif untuk Mobile: Foto menumpuk vertikal jika layar sempit */
+@media (max-width: 768px) {
+    .brand-logo-small {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .brand-logo-small img {
+        height: 300px; /* Tinggi lebih pendek di mobile */
+    }
+}
+
+.main-desc {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; /* Sedikit diperbesar agar lebih berwibawa */
+    line-height: 1.8;
+    max-width: 850px; /* Diperlebar sedikit agar teks tidak terlalu menumpuk vertikal */
+    margin: 0 auto 50px;
+    color: #333;
+    font-style: italic;
+}
+/* --- CONTACT SECTION (CENTERED) --- */
+.contact-section {
+    padding: 80px 0 120px;
+    background-color: #e8e2d6; /* Menjaga konsistensi warna latar */
+}
+
+/* Mengubah grid menjadi flex column untuk posisi center */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    max-width: 900px; /* Membatasi lebar agar tetap elegan di layar lebar */
+    margin: 0 auto;
+}
+
+/* --- MAP CONTAINER CENTERED --- */
+.map-container {
+    width: 100%;
+    height: 450px;
+    background: #ccc;
+    border-radius: 12px; /* Memberikan sudut yang lebih halus */
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1); /* Shadow untuk depth */
+    order: 1; /* Memastikan peta muncul pertama */
+}
+
+/* --- INFO DETAILS CENTERED --- */
+.info-details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membagi 3 kolom informasi secara horizontal */
+    gap: 30px;
+    text-align: center; /* Teks rata tengah */
+    order: 2;
+}
+
+.info-block h3 {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.info-block p {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- STYLE UNTUK LINK LOCATION --- */
+.info-block h3 a.location-link {
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    color: #1a1a1a; /* Warna hitam sesuai desain awal */
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Efek Hover: Berubah menjadi Oranye sesuai tema */
+.info-block h3 a.location-link:hover {
+    color: var(--color-accent); /* Menggunakan variabel oranye #fc4f00 */
+    transform: translateY(-2px); /* Sedikit efek angkat saat dihover */
+}
+
+/* Opsional: Tambahkan garis bawah tipis saat dihover untuk memberi petunjuk klik */
+.info-block h3 a.location-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: var(--color-accent);
+    transition: width .3s;
+    margin: 2px auto 0;
+}
+
+.info-block h3 a.location-link:hover::after {
+    width: 100%;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .info-details {
+        grid-template-columns: 1fr; /* Tumpuk vertikal di HP */
+        gap: 50px;
+    }
+    
+    .map-container {
+        height: 350px;
+    }
+}
+
+/* --- STYLING BUTTON GROUP --- */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 12px 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1a1a1a; /* Warna teks awal */
+    border: 1.5px solid #1a1a1a; /* Garis tepi awal */
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+
+/* --- EFEK HOVER ORANGE --- */
+.btn-action:hover {
+    color: #ffffff; /* Warna teks saat hover */
+    background-color: #fc4f00; /* Warna accent orange */
+    border-color: #fc4f00;
+    transform: translateY(-3px); /* Sedikit mengangkat saat hover */
+    box-shadow: 0 10px 20px rgba(252, 79, 0, 0.2); /* Shadow orange halus */
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .btn-action {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+    }
+}
