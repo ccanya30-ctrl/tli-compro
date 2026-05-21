@@ -18,6 +18,9 @@ const RpsResto = () => {
     { id: 6, img: '/Pisang_Goreng_Keju.jpg', category: 'dessert', row: 1 },
     { id: 7, img: '/Proklamasi_Platter.jpg', category: 'appetizers', row: 1 },
     { id: 12, img: '/Chef_Salad.jpg', category: 'appetizers', row: 2 },
+    { id: 14, img: '/Es_Kopi_Susu.jpg', category: 'drinks', row: 2 },
+    { id: 15, img: '/Es_Kopi_Caramel.jpg', category: 'drinks', row: 2 },
+
   ];
 
   const categories = ['lunch', 'drinks', 'dessert', 'appetizers'];

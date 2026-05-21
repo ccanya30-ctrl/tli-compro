@@ -38,8 +38,8 @@ const Footer = () => {
             <li><Link to="/Comingsoon">Lawnbrook Bar & Lounge</Link></li>
             
             {/* Link Eksternal menggunakan <a> tag agar tidak dianggap route internal */}
-            <li><a href="https://spacepro.id" target="_blank" rel="noreferrer">Spacepro Apps</a></li>
-            <li><a href="https://www.instagram.com/thelawnspace/" target="_blank" rel="noreferrer">The Lawn Space</a></li>
+            <li><a href="https://spacepro.id" target="_blank" rel="noreferrer">SpacePro Apps</a></li>
+            <li><a href="https://www.instagram.com/spacepro.id/" target="_blank" rel="noreferrer">The Lawn Space</a></li>
             <li><a href="https://bedtonic.com/" target="_blank" rel="noreferrer">Bedtonic. Bedding & Fashion</a></li>
             
             <li><Link to="/Comingsoon">Folia Florist</Link></li>
@@ -74,17 +74,18 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container footer-bottom-content">
-          <p>© 2025 Trifilosofi Lifestyle Indonesia, All Rights Reserved.</p>
-          <div className="footer-lang">
-            <div className="footer-divider"></div> 
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" 
-              alt="Indonesia Flag" 
-              className="flag" 
-              style={{ width: '24px', height: 'auto' }}
-            />
-            <span>Indonesia (GMT +07:00)</span>
-          </div>
+          {/* Baris di bawah ini akan otomatis update ke tahun berjalan */}
+            <p>© {new Date().getFullYear()} Trifilosofi Lifestyle Indonesia, All Rights Reserved.</p>
+            <div className="footer-lang">
+              <div className="footer-divider"></div> 
+              <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" 
+                  alt="Indonesia Flag" 
+                  className="flag" 
+                  style={{ width: '24px', height: 'auto' }}
+                />
+              <span>Indonesia (GMT +07:00)</span>
+            </div>
         </div>
       </div>
     </footer>
