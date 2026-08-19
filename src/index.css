@@ -986,8 +986,9 @@ h1, h2, h3 {
 
 .bu-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 350px));
   gap: 30px;
+  justify-content: center;
 }
 
 .bu-card:hover {
@@ -1149,7 +1150,8 @@ body {
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
   .bu-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 350px));
+    justify-content: center;
   }
 }
 

@@ -1,22 +1,28 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async'; // HelmetProvider is in main.jsx — only import Helmet here
-import './index.css';
+import React, { useState, useRef, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
+import { Helmet } from "react-helmet-async"; // HelmetProvider is in main.jsx — only import Helmet here
+import "./index.css";
 
-import Header from './Header';
-import Footer from './Footer';
-import Gallery from './Gallery';
-import RpsResto from './RpsResto';
-import ComingSoon from './ComingSoon';
-import GrowthWithUs from './GrowthWithUs';
+import Header from "./Header";
+import Footer from "./Footer";
+import Gallery from "./Gallery";
+import RpsResto from "./RpsResto";
+import ComingSoon from "./ComingSoon";
+import GrowthWithUs from "./GrowthWithUs";
 
-import rpsImg from '@/assets/RPSResto.jpeg';
-import lawnbrookImg from '@/assets/Lawnbrook_hero.jpeg';
+import rpsImg from "@/assets/RPSResto.jpeg";
+import lawnbrookImg from "@/assets/Lawnbrook_hero.jpeg";
 // import lawnbrookEstate from '@/assets/LawnBrookLogo.png';
-import spaceproImg from '@/assets/Spacepro_Hero.jpeg';
-import bedtonicImg from '@/assets/bedtonic_hero.jpeg';
-import theLawnSpaceImg from '@/assets/TheLawn.jpg';
-import faviconImg from '@/assets/favicon_tli.jpeg';
+import spaceproImg from "@/assets/Spacepro_Hero.jpeg";
+import bedtonicImg from "@/assets/bedtonic_hero.jpeg";
+import theLawnSpaceImg from "@/assets/TheLawn.jpg";
+import faviconImg from "@/assets/favicon_tli.jpeg";
 
 // ---------------------------------------------------------------------------
 // Data
@@ -29,26 +35,26 @@ const EXPERIENCES = [
     img: rpsImg,
     link: "/rps-resto",
     isExternal: false,
-    cta: "MAKE A RESERVATION"
+    cta: "MAKE A RESERVATION",
   },
-  {
-    category: "BAR & LOUNGE",
-    title: "LAWNBROOK",
-    desc: "Indulge in sophisticated spirits designed for the discerning night owl.",
-    img: lawnbrookImg,
-    link: "/Comingsoon",
-    isExternal: false,
-    cta: "EXPLORE THE NIGHT"
-  },
-  {
-    category: "PRODUCTIVITY & WELLNESS",
-    title: "THE LAWN SPACE",
-    desc: "Your entire day, perfectly integrated. From high-stakes meetings and deep focus sessions to your daily workout and post-activity fuel.",
-    img: theLawnSpaceImg,
-    link: "https://www.instagram.com/spacepro.id/",
-    isExternal: true,
-    cta: "BOOK A SESSION"
-  },
+  // {
+  //   category: "BAR & LOUNGE",
+  //   title: "LAWNBROOK",
+  //   desc: "Indulge in sophisticated spirits designed for the discerning night owl.",
+  //   img: lawnbrookImg,
+  //   link: "/Comingsoon",
+  //   isExternal: false,
+  //   cta: "EXPLORE THE NIGHT",
+  // },
+  // {
+  //   category: "PRODUCTIVITY & WELLNESS",
+  //   title: "THE LAWN SPACE",
+  //   desc: "Your entire day, perfectly integrated. From high-stakes meetings and deep focus sessions to your daily workout and post-activity fuel.",
+  //   img: theLawnSpaceImg,
+  //   link: "https://www.instagram.com/spacepro.id/",
+  //   isExternal: true,
+  //   cta: "BOOK A SESSION",
+  // },
   {
     category: "WORKING SPACE APP",
     title: "SPACEPRO",
@@ -56,26 +62,26 @@ const EXPERIENCES = [
     img: spaceproImg,
     link: "https://spacepro.id",
     isExternal: true,
-    cta: "BOOK YOUR SPACE"
+    cta: "BOOK YOUR SPACE",
   },
-  {
-    category: "BEDDING & FASHION",
-    title: "BEDTONIC",
-    desc: "Sustainable linen bedding and clothing designed for comfort, durability, and a perfectly conscious home.",
-    img: bedtonicImg,
-    link: "https://bedtonic.com/",
-    isExternal: true,
-    cta: "GRAB YOUR COMFORT"
-  },
-  {
-    category: "FLORIST",
-    title: "FOLIA",
-    desc: "An artisanal floral arrangement that transforms botanical beauty into elegance.",
-    img: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1480&auto=format&fit=crop",
-    link: "/Comingsoon",
-    isExternal: false,
-    cta: "GRAB YOUR BOUQUET"
-  }
+  // {
+  //   category: "BEDDING & FASHION",
+  //   title: "BEDTONIC",
+  //   desc: "Sustainable linen bedding and clothing designed for comfort, durability, and a perfectly conscious home.",
+  //   img: bedtonicImg,
+  //   link: "https://bedtonic.com/",
+  //   isExternal: true,
+  //   cta: "GRAB YOUR COMFORT",
+  // },
+  // {
+  //   category: "FLORIST",
+  //   title: "FOLIA",
+  //   desc: "An artisanal floral arrangement that transforms botanical beauty into elegance.",
+  //   img: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?q=80&w=1480&auto=format&fit=crop",
+  //   link: "/Comingsoon",
+  //   isExternal: false,
+  //   cta: "GRAB YOUR BOUQUET"
+  // }
 ];
 
 // ---------------------------------------------------------------------------
@@ -98,21 +104,34 @@ const ScrollToTop = () => {
  */
 const SEO = ({ title, description, image }) => (
   <Helmet>
-    <title>{title ? `${title} | Trifilosofi Lifestyle Indonesia` : 'Trifilosofi Lifestyle Indonesia'}</title>
+    <title>
+      {title
+        ? `${title} | Trifilosofi Lifestyle Indonesia`
+        : "Trifilosofi Lifestyle Indonesia"}
+    </title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/jpeg" href={faviconImg} />
     <link rel="canonical" href="https://www.trifilosofilifestyleindonesia.id" />
 
     {/* Open Graph */}
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title || 'Trifilosofi Lifestyle Indonesia'} />
+    <meta
+      property="og:title"
+      content={title || "Trifilosofi Lifestyle Indonesia"}
+    />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image || faviconImg} />
-    <meta property="og:url" content="https://www.trifilosofilifestyleindonesia.id" />
+    <meta
+      property="og:url"
+      content="https://www.trifilosofilifestyleindonesia.id"
+    />
 
     {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title || 'Trifilosofi Lifestyle Indonesia'} />
+    <meta
+      name="twitter:title"
+      content={title || "Trifilosofi Lifestyle Indonesia"}
+    />
     <meta name="twitter:description" content={description} />
   </Helmet>
 );
@@ -137,8 +156,8 @@ const Home = () => {
   const scrollToCard = (index) => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
-        left: (scrollRef.current.offsetWidth * 0.8) * index,
-        behavior: 'smooth'
+        left: scrollRef.current.offsetWidth * 0.8 * index,
+        behavior: "smooth",
       });
     }
   };
@@ -154,7 +173,9 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-visual"></div>
         <div className="container hero-content">
-          <h1>Curating Lifestyle. <br /> Defined by Principles</h1>
+          <h1>
+            Curating Lifestyle. <br /> Defined by Principles
+          </h1>
         </div>
       </section>
 
@@ -170,9 +191,24 @@ const Home = () => {
           <div className="pillar-carousel-wrapper">
             <div className="pillar-grid">
               {[
-                { id: "01", title: "Commitment", desc: "An unwavering dedication to creating connections.", icon: "user" },
-                { id: "02", title: "Precision", desc: "Meticulous attention to every detail.", icon: "target" },
-                { id: "03", title: "Yield", desc: "Creating lasting value for your daily rhythm.", icon: "activity" }
+                {
+                  id: "01",
+                  title: "Commitment",
+                  desc: "An unwavering dedication to creating connections.",
+                  icon: "user",
+                },
+                {
+                  id: "02",
+                  title: "Precision",
+                  desc: "Meticulous attention to every detail.",
+                  icon: "target",
+                },
+                {
+                  id: "03",
+                  title: "Yield",
+                  desc: "Creating lasting value for your daily rhythm.",
+                  icon: "activity",
+                },
               ].map((pillar) => (
                 <div key={pillar.id} className="pillar-item">
                   <div className="pillar-number">{pillar.id}</div>
@@ -192,14 +228,38 @@ const Home = () => {
       <section className="partner-logos-container">
         <div className="container ecosystem-layout">
           <div className="main-brand-row">
-            <img src="/Logo-Trifilosofi.png" alt="Trifilosofi" className="partner-logo brand-primary" />
+            {/* <img
+              src="/Logo-Trifilosofi.png"
+              alt="Trifilosofi"
+              className="partner-logo brand-primary"
+            /> */}
           </div>
           <div className="sub-brand-grid">
-            <img src="/lawnbrookEstate.png" alt="LawnBrook Estate" className="partner-logo-lawnbrook-estate" />
-            <img src="/rps.png" alt="Ryan Pibersano" className="partner-logo-rps" />
-            <img src="/bedtonic.png" alt="Bedtonic" className="partner-logo-bedtonic" />
-            <img src="/spacepro.png" alt="SpacePro" className="partner-logo-spacepro" />
-            <img src="/lawnbrook.png" alt="Lawnbrook" className="partner-logo-lawnbrook" />
+            {/* <img
+              src="/lawnbrookEstate.png"
+              alt="LawnBrook Estate"
+              className="partner-logo-lawnbrook-estate"
+            /> */}
+            <img
+              src="/rps.png"
+              alt="Ryan Pibersano"
+              className="partner-logo-rps"
+            />
+            {/* <img
+              src="/bedtonic.png"
+              alt="Bedtonic"
+              className="partner-logo-bedtonic"
+            /> */}
+            <img
+              src="/spacepro.png"
+              alt="SpacePro"
+              className="partner-logo-spacepro"
+            />
+            {/* <img
+              src="/lawnbrook.png"
+              alt="Lawnbrook"
+              className="partner-logo-lawnbrook"
+            /> */}
           </div>
         </div>
       </section>
@@ -225,9 +285,18 @@ const Home = () => {
                     <h3>{item.title}</h3>
                     <p>{item.desc}</p>
                     {item.isExternal ? (
-                      <a href={item.link} target="_blank" rel="noreferrer" className="card-link">{item.cta}</a>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="card-link"
+                      >
+                        {item.cta}
+                      </a>
                     ) : (
-                      <Link to={item.link} className="card-link">{item.cta}</Link>
+                      <Link to={item.link} className="card-link">
+                        {item.cta}
+                      </Link>
                     )}
                   </div>
                 </div>
@@ -241,8 +310,8 @@ const Home = () => {
           {EXPERIENCES.map((_, i) => {
             const distance = Math.abs(scrollProgress * (totalCards - 1) - i);
             const isNear = distance < 1;
-            const dynamicWidth = isNear ? 10 + (20 * (1 - distance)) : 10;
-            const dynamicOpacity = isNear ? 0.5 + (0.5 * (1 - distance)) : 0.5;
+            const dynamicWidth = isNear ? 10 + 20 * (1 - distance) : 10;
+            const dynamicOpacity = isNear ? 0.5 + 0.5 * (1 - distance) : 0.5;
 
             return (
               <span
@@ -251,8 +320,8 @@ const Home = () => {
                 style={{
                   width: `${dynamicWidth}px`,
                   opacity: dynamicOpacity,
-                  backgroundColor: isNear ? '#000000' : '#d1d1d1',
-                  borderRadius: '5px'
+                  backgroundColor: isNear ? "#000000" : "#d1d1d1",
+                  borderRadius: "5px",
                 }}
                 onClick={() => scrollToCard(i)}
               />
@@ -273,11 +342,11 @@ export default function App() {
   useEffect(() => {
     let link = document.querySelector("link[rel~='icon']");
     if (!link) {
-      link = document.createElement('link');
-      link.rel = 'icon';
-      document.getElementsByTagName('head')[0].appendChild(link);
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.getElementsByTagName("head")[0].appendChild(link);
     }
-    link.type = 'image/jpeg';
+    link.type = "image/jpeg";
     link.href = faviconImg;
   }, []);
 
