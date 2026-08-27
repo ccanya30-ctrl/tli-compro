@@ -16,10 +16,10 @@ import RpsResto from "./RpsResto";
 import ComingSoon from "./ComingSoon";
 import GrowthWithUs from "./GrowthWithUs";
 
-import rpsImg from "@/assets/RPSResto.jpeg";
+import rpsImg from "../public/mie.webp";
 import lawnbrookImg from "@/assets/Lawnbrook_hero.jpeg";
 // import lawnbrookEstate from '@/assets/LawnBrookLogo.png';
-import spaceproImg from "@/assets/Spacepro_Hero.jpeg";
+import spaceproImg from "../public/spacepro.webp";
 import bedtonicImg from "@/assets/bedtonic_hero.jpeg";
 import theLawnSpaceImg from "@/assets/TheLawn.jpg";
 import faviconImg from "@/assets/favicon_tli.jpeg";
@@ -56,7 +56,7 @@ const EXPERIENCES = [
   //   cta: "BOOK A SESSION",
   // },
   {
-    category: "WORKING SPACE APP",
+    category: "PRODUCTIVITY & WELLNESS",
     title: "SPACEPRO",
     desc: "The shortcut to a healthier routine.",
     img: spaceproImg,
