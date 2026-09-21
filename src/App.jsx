@@ -20,6 +20,7 @@ import rpsImg from "../public/mie.webp";
 import lawnbrookImg from "@/assets/Lawnbrook_hero.jpeg";
 // import lawnbrookEstate from '@/assets/LawnBrookLogo.png';
 import spaceproImg from "../public/spacepro.webp";
+import carRentImg from "../public/car-rent.webp";
 import bedtonicImg from "@/assets/bedtonic_hero.jpeg";
 import theLawnSpaceImg from "@/assets/TheLawn.jpg";
 import faviconImg from "@/assets/favicon_tli.jpeg";
@@ -58,11 +59,20 @@ const EXPERIENCES = [
   {
     category: "PRODUCTIVITY & WELLNESS",
     title: "SPACEPRO",
-    desc: "The shortcut to a healthier routine.",
+    desc: "A professional workspace designed to support productive meetings, collaborations, and business gatherings. SpacePro offers thoughtfully designed rooms with flexible capacities, modern facilities, and a comfortable environment tailored to every business need.",
     img: spaceproImg,
     link: "https://spacepro.id",
     isExternal: true,
     cta: "BOOK YOUR SPACE",
+  },
+  {
+    category: "CAR RENTAL",
+    title: "TRIFILOSOFI CAR RENT",
+    desc: "Comprehensive vehicle rental and operational solutions for passenger and commercial needs, with integrated logistics and vehicle administration support.",
+    img: carRentImg,
+    link: "https://spacepro.id",
+    isExternal: true,
+    cta: "BOOK YOUR CAR",
   },
   // {
   //   category: "BEDDING & FASHION",
