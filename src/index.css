@@ -435,6 +435,9 @@ body {
   border-color: rgba(252, 79, 0, 0.3);
 }
 
+.bu-dots-container {
+  display: none;
+}
 
 /* Bagian Gambar */
 .card-image-placeholder {
@@ -2435,11 +2438,6 @@ body {
 
 /* Animasi Dot */
 .bu-dots-container {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 30px;
-}
   display: flex;
   justify-content: center;
   gap: 10px;
