@@ -57,7 +57,7 @@ const EXPERIENCES = [
   //   cta: "BOOK A SESSION",
   // },
   {
-    category: "PRODUCTIVITY & WELLNESS",
+    category: "WORKING SPACE",
     title: "SPACEPRO",
     desc: "A professional workspace designed to support productive meetings, collaborations, and business gatherings. SpacePro offers thoughtfully designed rooms with flexible capacities, modern facilities, and a comfortable environment tailored to every business need.",
     img: spaceproImg,
