@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* Set this to the height of your Header */
 }
-
 
 :root {
   --color-bg-warm: #ffffff;
@@ -16,7 +17,6 @@ html {
   --shadow-standard: 0 15px 35px rgba(0, 0, 0, 0.05);
   --shadow-orange: 0 25px 50px rgba(252, 79, 0, 0.15);
 }
-
 
 /* --- HEADER CORE --- */
 
@@ -1273,8 +1273,6 @@ body {
 
 
 /* GALLERY CSS */
-/* Import Font Montserrat agar persis */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 
 /* --- VARIABLES & TOKENS --- */
 :root {
@@ -1883,8 +1881,7 @@ html, body {
   --dark-orange: #d14a12;
   --text-dark: #333;
 }
-/* Import Font (Opsional: Menggunakan font yang mirip dengan desain) */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
 
 :root {
   --primary-orange: #f35b1c;
@@ -2044,10 +2041,9 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin-bottom: 30px;
-} */
+}
 
 /* Update pada Menu Section */
-
 
 /* Pastikan judul tetap terbaca di latar oranye */
 .menu-title {
@@ -2609,8 +2605,6 @@ body {
 /* GALLERYY */
 
 
-/* Import Font Montserrat agar persis */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 
 /* --- VARIABLES & TOKENS --- */
 :root {
