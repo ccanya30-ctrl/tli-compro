@@ -16,7 +16,7 @@ import RpsResto from "./RpsResto";
 import ComingSoon from "./ComingSoon";
 import GrowthWithUs from "./GrowthWithUs";
 
-import rpsImg from "../public/mie.webp";
+import rpsImg from "../public/laksa.webp";
 import lawnbrookImg from "@/assets/Lawnbrook_hero.jpeg";
 // import lawnbrookEstate from '@/assets/LawnBrookLogo.png';
 import spaceproImg from "../public/spacepro.webp";
@@ -251,7 +251,7 @@ const Home = () => {
               className="partner-logo-lawnbrook-estate"
             /> */}
             <img
-              src="/rps.png"
+              src="/logo-png-rps.webp"
               alt="Ryan Pibersano"
               className="partner-logo-rps"
             />
@@ -264,6 +264,11 @@ const Home = () => {
               src="/spacepro.png"
               alt="SpacePro"
               className="partner-logo-spacepro"
+            />
+            <img
+              src="/tcr-logo.webp"
+              alt="SpacePro"
+              className="partner-logo-tcr"
             />
             {/* <img
               src="/lawnbrook.png"
