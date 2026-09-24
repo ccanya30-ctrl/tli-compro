@@ -171,13 +171,13 @@ const RpsResto = () => {
           <div className="info-grid">
             <div className="info-block">
               <h4>Opening Hours</h4>
-              <p>Mon - Fri: 09.00 AM - 10.00 PM</p>
-              <p>Sat: 09.00 AM - 06.00 PM</p>
-              <p>Sun: Closed</p>
+              <p>Mon - Fri: 08.30 AM - 10.00 PM</p>
+              <p>Sat: 10.00 AM - 09.00 PM</p>
+              <p>Sun: Opening Soon</p>
             </div>
             <div className="info-block">
               <h4>Contact Us</h4>
-              <p>📞 +62 822 1828 1868</p>
+              <p>📞 +62 856-1000-954</p>
             </div>
             <div className="info-block full-width">
               <h4>Address</h4>
