@@ -99,7 +99,7 @@ const Footer = () => {
             <p>
               <span className="icon">📞</span>
               <a href="tel:+622130009707" className="footer-link">
-                +628561000954
+                +6285111319423
               </a>
             </p>
           </div>

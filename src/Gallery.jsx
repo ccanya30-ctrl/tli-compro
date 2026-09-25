@@ -2,6 +2,10 @@ import React, { useState, useRef } from 'react';
 import Header from './Header'; 
 import './index.css';
 
+// Gambar ada di src/assets, jadi harus di-resolve oleh Vite (bukan path '/assets/...')
+const assetMap = import.meta.glob('./assets/*.{jpg,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const getAsset = (file) => assetMap[`./assets/${file}`];
+
 const Gallery = () => {
   const [openGalleries, setOpenGalleries] = useState({});
   const [isLoadedMore, setIsLoadedMore] = useState(false);
@@ -39,14 +43,14 @@ const Gallery = () => {
     {
       id: 'farewell',
       title: 'Corporate Gathering',
-      mainImg: '/assets/Farewell_Direktur_IT&Digital_Heroimg.jpg',
+      mainImg: getAsset('Farewell_Direktur_IT&Digital_Heroimg.jpg'),
       images: ['Farewell_Pertamina', 'Farewell_Direktur_IT&Digital2', 'Farewell_Direktur_IT&Digital3', 'Farewell_Direktur_IT&Digital4'],
       path: '/assets/' 
     },
     {
       id: 'training',
       title: 'Family Events & Wedding',
-      mainImg: '/assets/Khitan_Heroimg.jpg',
+      mainImg: getAsset('Khitan_Heroimg.jpg'),
       images: ['Khitan_1', 'Khitan_2', 'Khitan_3', 'Khitan_4'],
       path: '/assets/'
     }
@@ -56,21 +60,21 @@ const Gallery = () => {
     {
       id: 'fgd',
       title: 'Forum & Group Discussion',
-      mainImg: '/assets/FGD2_Kebijakan_Biodiesel_Heroimg.jpg',
+      mainImg: getAsset('FGD2_Kebijakan_Biodiesel_Heroimg.jpg'),
       images: ['FGD2_Kebijakan_Biodiesel1', 'FGD2_Kebijakan_Biodiesel2', 'FGD2_Kebijakan_Biodiesel3', 'Forum&GroupDiscussion1', 'Forum&GroupDiscussion2', 'Forum&GroupDiscussion3', 'Forum&GroupDiscussion4'],
       path: '/assets/'
     },
     {
       id: 'tc',
       title: 'Training & Classroom',
-      mainImg: '/assets/In_House_Training_Kompetensi_Jabatan_Heroimg.jpg',
+      mainImg: getAsset('In_House_Training_Kompetensi_Jabatan_Heroimg.jpg'),
       images: ['In_House_Training_Kompetensi_Jabatan8', 'In_House_Training_Kompetensi_Jabatan7', 'In_House_Training_Kompetensi_Jabatan6', 'In_House_Training_Kompetensi_Jabatan5', 'In_House_Training_Kompetensi_Jabatan1', 'In_House_Training_Kompetensi_Jabatan2', 'Training&Classroom1', 'Training&Classroom2', 'Training&Classroom3'],
       path: '/assets/'
     },
     {
       id: 'bm',
       title: 'Board Meeting',
-      mainImg: '/assets/Board_Meeting_Heroimg.jpg',
+      mainImg: getAsset('Board_Meeting_Heroimg.jpg'),
       images: ['Board_Meeting1', 'Board_Meeting2', 'Board_Meeting3', 'Board_Meeting4', 'Board_Meeting5'],
       path: '/assets/'
     }
@@ -109,7 +113,7 @@ const Gallery = () => {
             {event.images.map((imgName, idx) => (
               <div key={idx} className="snap-start" style={{ flexShrink: 0 }}>
                 <img 
-                  src={`${event.path}${imgName}.jpg`} 
+                  src={getAsset(`${imgName}.jpg`) || 'https://via.placeholder.com/380x250?text=TLI+Gallery'} 
                   alt={`${event.title} ${idx + 1}`} 
                   style={{ width: '380px', height: '250px', objectFit: 'cover', borderRadius: '4px' }}
                   onError={(e) => { e.target.src = 'https://via.placeholder.com/380x250?text=TLI+Gallery'; }}
